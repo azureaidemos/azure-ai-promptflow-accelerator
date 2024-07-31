@@ -182,9 +182,13 @@ graph TD
     J --> M[LLM RAG if needed]
     K --> N[QnaHandler]
     K --> O[CustomerQueryHandler]
+    K --> P[OfferQueryHandler]
+    K --> Q[OfferDetailHandler]
     K --> R[FallbackHandler]
     N --> S[Process Response]
     O --> S
+    P --> S
+    Q --> S
     R --> S
     L --> S
     M --> S

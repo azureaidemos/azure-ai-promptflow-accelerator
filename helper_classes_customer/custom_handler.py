@@ -22,8 +22,6 @@ import logging
 from promptflow.connections import CustomConnection  # type: ignore
 from promptflow.connections import CognitiveSearchConnection # type: ignore
 from helper_classes_customer.customer_service.qna_handler import QnaHandler
-from helper_classes_customer.offerQuery.offerQuery_handler import OfferQueryHandler
-from helper_classes_customer.offerQuery.offerDetail_handler import offerDetailHandler
 from helper_classes_customer.customer_service.fallback_handler import FallbackHandler
 from helper_classes_customer.customer_service.customerQuery_handler import CustomerQueryHandler
 
@@ -70,36 +68,6 @@ class CustomHandler:
         """Handles QnA queries using QnaHandler."""
         try:
             handler = QnaHandler(
-                self.conversation_parameters,
-                self.custom_connections,
-                self.cognitive_search_connection,
-                self.conversation_data,
-                self.topic,
-            )
-            return handler.execute()
-        except Exception as e:
-            logger.error("Exception occurred: %s", e)
-            raise
-
-    def handle_offerQuery(self) -> str:
-        """Handles offer queries using OfferQueryHandler."""
-        try:
-            handler = OfferQueryHandler(
-                self.conversation_parameters,
-                self.custom_connections,
-                self.cognitive_search_connection,
-                self.conversation_data,
-                self.topic,
-            )
-            return handler.execute()
-        except Exception as e:
-            logger.error("Exception occurred: %s", e)
-            raise
-
-    def handle_offerDetail(self) -> str:
-        """Handles offer detail queries using offerDetailHandler."""
-        try:
-            handler = offerDetailHandler(
                 self.conversation_parameters,
                 self.custom_connections,
                 self.cognitive_search_connection,

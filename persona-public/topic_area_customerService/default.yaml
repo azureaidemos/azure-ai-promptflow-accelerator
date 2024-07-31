@@ -51,19 +51,6 @@ tools:
             required:
               - topic_name
               - response
-          offerQuery:
-            type: object
-            description: "Use this when the User is asking for deals."
-            properties:
-              topic_name:
-                type: string
-                description: "Default to 'offerQuery'."
-              response:
-                type: string
-                description: "Advise user they need details about their request. Ask them what they are looking for specifically."
-            required:
-              - topic_name
-              - response
           response:
             type: string
             description: "Ask the user for their email address."
