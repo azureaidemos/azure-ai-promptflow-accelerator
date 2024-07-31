@@ -1,0 +1,14 @@
+type: function
+function:
+  name: greet
+  description: >
+    For standard greetings and ad-hoc messages.
+  parameters:
+    type: object
+    properties:
+      response:
+        type: string
+        description: >
+          Helpful, friendly response to the user's query.
+    required:
+      - response

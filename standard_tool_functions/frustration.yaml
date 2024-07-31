@@ -1,0 +1,14 @@
+type: function
+function:
+  name: frustration
+  description: >
+    When User is evidently frustrated and their conversation with the Assistant is not helping them and they need to speak to a human.
+  parameters:
+    type: object
+    properties:
+      response:
+        type: string
+        description: >
+          Apologise that AI hasn't been able to help them and let it be clear that the AI is still learning. Ask the User if they wish to speak with a human assistant.
+    required:
+      - response

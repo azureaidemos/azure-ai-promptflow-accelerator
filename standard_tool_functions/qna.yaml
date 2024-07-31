@@ -1,0 +1,19 @@
+type: function
+function:
+  name: qna
+  description: >
+    Use this when the User wants to ask a general question about our products or hiking in general.
+  parameters:
+    type: object
+    properties:
+      query:
+        type: string
+        description: >
+          Create an concise query from user query and related chat history
+      previous_answer_provided:
+        type: string
+        description: >
+          Create a summary of all answers that are relevant to this topic that is being discussed.
+    required:
+      - query
+      - previous_answer_provided

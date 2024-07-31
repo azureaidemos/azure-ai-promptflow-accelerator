@@ -1,0 +1,33 @@
+id: template_chat_flow
+name: Template Chat Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  chat_history:
+    type: list
+    is_chat_input: false
+    is_chat_history: true
+  query:
+    type: string
+    is_chat_input: true
+    default: What is the best hiking rainy bant?
+  conversation_parameters:
+    type: string
+    default: '{"session_id":"d911c7a6-3b1d-4e49-9ef9-aa30a3a78f4b","conversation_id":"8ee11259-2f75-4607-96fd-69d0d57aef3e","persona_name":"public","topic_area":"customerService","locale":"en-GB","user":{"id":"anonymous","role":"public"}}'
+outputs:
+  answer:
+    type: string
+    reference: ${execute.output}
+    is_chat_output: true
+nodes:
+- name: execute
+  type: python
+  source:
+    type: code
+    path: execute.py
+  inputs:
+    chat_history: ${inputs.chat_history}
+    conversation_parameters: ${inputs.conversation_parameters}
+    custom_connections: derby_ptu_new
+    query: ${inputs.query}
+    cognitive_search_connection: contoso_hiking_search

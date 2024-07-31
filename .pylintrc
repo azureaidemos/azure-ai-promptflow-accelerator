@@ -1,0 +1,61 @@
+[MASTER]
+ignore=CVS
+
+[MESSAGES CONTROL]
+disable=
+    R0903,  # Too few public methods
+    C0303,  # Trailing whitespace
+
+[REPORTS]
+reports=no
+
+[BASIC]
+good-names=i,j,k,ex,Run,_
+bad-names=foo,bar,baz,toto,tutu,tata
+method-rgx=[a-z_][a-z0-9_]{2,30}$
+module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+
+[TYPECHECK]
+ignored-modules=
+suggestion-mode=yes
+generated-members=
+
+[FORMAT]
+max-line-length=110
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+max-module-lines=1000
+indent-string='    '
+indent-after-paren=4
+
+[LOGGING]
+logging-format-style=old
+logging-modules=logging
+
+[DESIGN]
+max-args=5
+max-attributes=7
+max-bool-expr=5
+max-nested-blocks=5
+max-parents=7
+max-public-methods=20
+min-public-methods=2
+
+[CLASSES]
+defining-attr-methods=__init__,__new__
+
+[IMPORTS]
+allow-wildcard-with-all=no
+
+[MISCELLANEOUS]
+notes=FIXME,XXX,TODO
+
+[SIMILARITIES]
+min-similarity-lines=4
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=yes
+
+[VARIABLES]
+additional-builtins=
+init-import=no
+dummy-variables-rgx=_|dummy

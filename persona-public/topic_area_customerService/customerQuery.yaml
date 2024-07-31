@@ -1,0 +1,42 @@
+follow_on_business_logic:
+  - name: customerQuery
+    action:
+      type: custom_handler
+      method_name: handle_customerQuery
+  - name: fallback
+    action:
+      type: custom_handler
+      method_name: handle_fallback      
+functions_to_persist:
+  - customerQuery
+  - frustration
+  - fallback  
+llm_parameters:
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  temperature: 0.0
+  top_p: 0.95
+standard_tool_functions:
+  - end_conversation
+  - frustration
+  - greet
+  - fallback
+systemPrompt: "You are an Assistant specialising in handling customer information enquiries. Run the appropriate function."
+tools:
+  - type: function
+    function:
+      name: customerQuery
+      description: "Run this to identify the customer and return the information requested by the customer."
+      parameters:
+        type: object
+        properties:
+          query:
+            type: string
+            description: >
+              Create an concise query from user query and related chat history
+          email:
+            type: string
+            description: "The email address they registered with"
+        required:
+          - email
+          - query

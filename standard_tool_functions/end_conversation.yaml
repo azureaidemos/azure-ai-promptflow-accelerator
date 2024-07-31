@@ -1,0 +1,23 @@
+type: function
+function:
+  name: end_conversation
+  description: >
+    To be used when the user seems satisfied with the conversation, often indicated by thankfulness or no further inquiries. Also to be used when user shared the file for our knowledge base.
+  parameters:
+    type: object
+    properties:
+      resettopics:
+            type: object
+            description: "Use this when the User is done with the conversation"
+            properties:
+              topic_name:
+                type: string
+                description: "Default to 'default'."
+              response:
+                type: string
+                description: "Thank user for his conversation or uploading the file. Apologise if they're not happy."
+            required:
+              - topic_name
+              - response
+    required:
+      - resettopics

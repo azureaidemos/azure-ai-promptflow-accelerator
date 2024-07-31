@@ -1,0 +1,14 @@
+type: function
+function:
+  name: fallback
+  description: >
+    To be used when the User wants to do something different than the current activity.
+  parameters:
+    type: object
+    properties:
+      response:
+        type: string
+        description: >
+          Let them know that they might be able to pick up where they left off, but that this may not always be possible.
+    required:
+      - response

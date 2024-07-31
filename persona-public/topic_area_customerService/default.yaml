@@ -1,0 +1,70 @@
+systemPrompt: "You are an assistant on an e-shop helping customers with their hiking queries. Run the appropriate function."
+follow_on_business_logic:
+  - name: qna
+    action:
+      type: custom_handler
+      method_name: handle_qna
+    ai_search:
+      index_details:
+        service_name: "arzielinskisearch"
+        index_name: "hikingproducts"
+      parameters:
+        select: chunk
+        min_reranker_score: 0.0
+        semantic_configuration: hikingproducts-semantic-configuration
+        k: 3
+        vector_field: "text_vector"
+        query_type: "semantic"
+        query_language: "en-GB"
+        query_key: "query"
+        score_key: "@search.rerankerScore"
+        content_key: "chunk"
+functions_to_persist:
+  - qna
+llm_parameters:
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  temperature: 0.0
+  top_p: 0.95
+standard_tool_functions:
+  - end_conversation
+  - frustration
+  - qna
+tools:
+  - type: function
+    function:
+      name: identify_topic
+      description: "Explain how you can help them today if you're not sure what they want."
+      parameters:
+        type: object
+        properties:
+          customerQuery:
+            type: object
+            description: "Use this when the User is asking for any details regarding to their customer information."
+            properties:
+              topic_name:
+                type: string
+                description: "Default to 'customerQuery'."
+              response:
+                type: string
+                description: "Ask the user to repeat their enquiry in more detail."
+            required:
+              - topic_name
+              - response
+          offerQuery:
+            type: object
+            description: "Use this when the User is asking for deals."
+            properties:
+              topic_name:
+                type: string
+                description: "Default to 'offerQuery'."
+              response:
+                type: string
+                description: "Advise user they need details about their request. Ask them what they are looking for specifically."
+            required:
+              - topic_name
+              - response
+          response:
+            type: string
+            description: "Ask the user for their email address."
+        required: []
