@@ -21,9 +21,9 @@ from typing import Any, Dict
 import logging
 from promptflow.connections import CustomConnection  # type: ignore
 from promptflow.connections import CognitiveSearchConnection # type: ignore
-from helper_classes_customer.customer_service.qna_handler import QnaHandler
-from helper_classes_customer.customer_service.fallback_handler import FallbackHandler
-from helper_classes_customer.customer_service.customerQuery_handler import CustomerQueryHandler
+from helper_classes.helper_classes_customer.customer_service.qna_handler import QnaHandler
+from helper_classes.helper_classes_customer.customer_service.fallback_handler import FallbackHandler
+from helper_classes.helper_classes_customer.customer_service.customerQuery_handler import CustomerQueryHandler
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

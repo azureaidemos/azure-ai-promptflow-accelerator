@@ -1,4 +1,4 @@
-from lm_helper import LMHelper
+from helper_classes.lm_helper import LMHelper
 
 class SLMHelper(LMHelper):
     def create_client(self):

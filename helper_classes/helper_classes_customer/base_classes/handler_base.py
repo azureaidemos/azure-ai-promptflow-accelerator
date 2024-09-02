@@ -11,7 +11,7 @@ import logging
 from openai import AzureOpenAI
 from promptflow.connections import CustomConnection # type: ignore
 from promptflow.connections import CognitiveSearchConnection # type: ignore
-from conversation_helper.conversation_data_helper import ConversationDataHelper
+from helper_classes.conversation_helper.conversation_data_helper import ConversationDataHelper
 
 
 class HandlerBase:

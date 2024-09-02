@@ -1,7 +1,7 @@
 from typing import Any
 from promptflow.connections import CustomConnection # type: ignore
 from promptflow.connections import CognitiveSearchConnection # type: ignore
-from helper_classes_customer.base_classes.handler_base import HandlerBase
+from helper_classes.helper_classes_customer.base_classes.handler_base import HandlerBase
 
 
 class FallbackHandler(HandlerBase):

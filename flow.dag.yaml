@@ -28,6 +28,6 @@ nodes:
   inputs:
     chat_history: ${inputs.chat_history}
     conversation_parameters: ${inputs.conversation_parameters}
-    custom_connections: derby_ptu_new
+    custom_connections: promot-flow-project
     query: ${inputs.query}
     cognitive_search_connection: contoso_hiking_search

@@ -11,8 +11,8 @@ import logging
 from typing import Any, Dict, List, Union
 from promptflow.connections import CustomConnection # type: ignore	
 from promptflow.connections import CognitiveSearchConnection # type: ignore
-from conversation_helper.conversation_data_helper import ConversationDataHelper
-from helper_classes_customer.custom_handler import CustomHandler
+from helper_classes.conversation_helper.conversation_data_helper import ConversationDataHelper
+from helper_classes.helper_classes_customer.custom_handler import CustomHandler
 
 
 class ResponseHandler:

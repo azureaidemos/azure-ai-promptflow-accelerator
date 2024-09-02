@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 from openai import AzureOpenAI
 from promptflow.connections import CustomConnection  # type: ignore
 from promptflow.connections import CognitiveSearchConnection # type: ignore
-from lm_helpers.llm_helper import LLMHelper
+from helper_classes.lm_helpers.llm_helper import LLMHelper
 
 class LlmRag:
     """

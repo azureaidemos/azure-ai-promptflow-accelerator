@@ -12,8 +12,7 @@ from typing import Any, Dict, List, Union
 from openai import AzureOpenAI
 from promptflow.connections import CustomConnection # type: ignore
 import yaml
-from .lm_helper import LMHelper
-
+from helper_classes.lm_helpers.lm_helper import LMHelper
 
 class LLMHelper(LMHelper):
     """

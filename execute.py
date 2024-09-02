@@ -3,9 +3,9 @@ from typing import Any
 from promptflow.core import tool # type: ignore
 from promptflow.connections import CustomConnection # type: ignore
 from promptflow.connections import CognitiveSearchConnection # type: ignore
-from conversation_helper.conversation_data_helper import ConversationDataHelper
+from helper_classes.conversation_helper.conversation_data_helper import ConversationDataHelper
 from helper_classes.response_handler import ResponseHandler
-from lm_helpers.llm_helper import LLMHelper
+from helper_classes.lm_helpers.llm_helper import LLMHelper
 
 
 @tool
